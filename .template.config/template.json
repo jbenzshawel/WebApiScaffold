@@ -20,6 +20,11 @@
             "type": "parameter",
             "dataType":"bool",
             "defaultValue": "false"
+        },
+        "AddSolution":{
+            "type": "parameter",
+            "dataType":"bool",
+            "defaultValue": "false"
         }
     },
     "sources":[{
@@ -33,6 +38,12 @@
                 "WebApiScaffold.WebApi/Entities/*",
                 "WebApiScaffold.WebApi/Interfaces/*",
                 "WebApiScaffold.Infrastructure/**/*"
+            ]
+          },
+          {
+            "condition": "(!AddSolution)",
+            "exclude": [ 
+                "WebApiScaffold.sln"
             ]
           }
         ]

@@ -16,6 +16,11 @@ namespace WebApiScaffold.Infrastructure.Data
             _dbContext = dbContext;
         }
 
+        public IQueryable<T> Get<T>() where T : BaseEntity
+        {
+            return _dbContext.Set<T>();
+        }
+
         public T GetById<T>(int id) where T : BaseEntity
         {
             return _dbContext.Set<T>().SingleOrDefault(e => e.Id == id);

@@ -11,6 +11,11 @@ ASP.NET Core dotnet new template for scaffolding Web API projects. Default imple
 -E|--EntityFramework : When set to true configures app to use Entity Framework Core  
 * bool - Optional          
 * Default: false / (*) true
+
+
+-A|--AddSolution : When set to true includes Visual Studio solution file (use this option with Windows)
+* bool - Optional
+* Default: false / (*) true
                         
 (* Indicates the value used if the switch is provided without a value.)
 
