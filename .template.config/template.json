@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Addison Benzshawel",
+    "classifications": [ "Web", "WebAPI" ],
+    "name": "Web API Scaffold",
+    "identity": "WebApiScaffold",
+    "shortName": "apiscaffold",
+    "tags": {
+        "language": "C#",
+        "type":"project"
+    },
+    "sourceName": "WebApiScaffold",
+    "symbols":{
+        "NLog":{
+            "type": "parameter",
+            "dataType":"bool",
+            "defaultValue": "false"
+        },
+        "EntityFramework":{
+            "type": "parameter",
+            "dataType":"bool",
+            "defaultValue": "false"
+        }
+    },
+    "sources":[{
+        "modifiers": [{
+          "condition": "(!NLog)",
+          "exclude": [ "WebApiScaffold.WebApi/nlog.config"]
+          },
+          {
+            "condition": "(!EntityFramework)",
+            "exclude": [ 
+                "WebApiScaffold.WebApi/Entities/*",
+                "WebApiScaffold.WebApi/Interfaces/*",
+                "WebApiScaffold.Infrastructure/**/*"
+            ]
+          }
+        ]
+    }]
+}
