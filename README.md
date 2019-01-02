@@ -23,16 +23,12 @@ dotnet new --install ~/Projects/dotnet/Templates/WebApiScaffold/
 ```
 
 
-## First Time Configuration
+## App Settings Configuration
 
-JWT TokenLifeInMinutes, TokenAudience, and TokenIssuer are set in appsettings.json. For development store Token Secret and Connetion Strings using app secrets. 
+Settings for JWT TokenLifeInMinutes, TokenAudience, and TokenIssuer are set in appsettings.json. For development Token Secret and Connetion Strings are stored using [app secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2). 
 
 Example:
 ```
     dotnet user-secrets set "JwtSettings:TokenSecret" "YOUR SECRET STRING"
     dotnet user-secrets set "ConnectionStrings:AppDatabase" "YOUR CONNECTION STRING"
 ```
-
-App Secrets Documentation:
-
-https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2
