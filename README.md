@@ -1,6 +1,10 @@
 # Web API Scaffold
-ASP.NET Core dotnet new template for scaffolding Web API projects. Default implementation includes Bearer Token authentication. Optional parameters for configuring NLog and Entity Framework Core. 
+ASP.NET Core dotnet new template for scaffolding Web API projects. Default implementation includes Bearer Token authentication. Optional parameters for configuring NLog, Entity Framework Core, and Solution file. 
 
+Example:
+```
+dotnet new apiscaffold -N -E -A
+```
 
 ## Options
 -N|--NLog : When set to true configures app to use NLog
