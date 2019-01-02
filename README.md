@@ -3,14 +3,14 @@ ASP.NET Core dotnet new template for scaffolding Web API projects. Default imple
 
 
 ## Options
-  -N|--NLog : When set to true configures app to use NLog
-                        bool - Optional          
-                        Default: false / (*) true
+-N|--NLog : When set to true configures app to use NLog
+* bool - Optional          
+* Default: false / (*) true
 
 
-  -E|--EntityFramework : When set to true configures app to use Entity Framework Core  
-                        bool - Optional          
-                        Default: false / (*) true
+-E|--EntityFramework : When set to true configures app to use Entity Framework Core  
+* bool - Optional          
+* Default: false / (*) true
                         
 (* Indicates the value used if the switch is provided without a value.)
 
