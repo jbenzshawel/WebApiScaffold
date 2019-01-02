@@ -1,6 +1,5 @@
 using System.Security.Claims;
 using WebApiScaffold.Core.Models.DTO.Security;
-using WebApiScaffold.Core.Services.Security;
 
 namespace WebApiScaffold.Core.Services.Security
 {
