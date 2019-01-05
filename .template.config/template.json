@@ -11,7 +11,7 @@
     },
     "sourceName": "WebApiScaffold",
     "symbols":{
-        "NLog":{
+        "Docker":{
             "type": "parameter",
             "dataType":"bool",
             "defaultValue": "false"
@@ -21,17 +21,21 @@
             "dataType":"bool",
             "defaultValue": "false"
         },
-        "AddSolution":{
+        "NLog":{
             "type": "parameter",
             "dataType":"bool",
             "defaultValue": "false"
         }
     },
     "sources":[{
-        "modifiers": [{
-          "condition": "(!NLog)",
-          "exclude": [ "WebApiScaffold.WebApi/nlog.config"]
-          },
+        "modifiers": [
+            {
+                "condition": "(!Docker)",
+                "exclude": [ 
+                    ".dockerignore",
+                    "Dockerfile"
+                ]
+            },
           {
             "condition": "(!EntityFramework)",
             "exclude": [ 
@@ -41,10 +45,8 @@
             ]
           },
           {
-            "condition": "(!AddSolution)",
-            "exclude": [ 
-                "WebApiScaffold.sln"
-            ]
+            "condition": "(!NLog)",
+            "exclude": [ "WebApiScaffold.WebApi/nlog.config"]
           }
         ]
     }]

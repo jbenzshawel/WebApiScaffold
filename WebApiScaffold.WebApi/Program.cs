@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 
 #if( NLog )
 using NLog.Web;
+using System;
+using Microsoft.Extensions.Logging;
 #endif
 
 namespace WebApiScaffold.WebApi
@@ -39,7 +41,7 @@ namespace WebApiScaffold.WebApi
             .ConfigureLogging(logging =>
             {
                 logging.ClearProviders();
-                logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                logging.SetMinimumLevel(LogLevel.Trace);
             })
             .UseNLog();
 #else

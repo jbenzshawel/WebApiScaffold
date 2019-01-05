@@ -9,6 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using WebApiScaffold.Core.Settings;
 using WebApiScaffold.Core.Services.Security;
+#if( EntityFramework )
+using WebApiScaffold.Core.Interfaces;
+using WebApiScaffold.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+#endif
 
 namespace WebApiScaffold.WebApi
 {
