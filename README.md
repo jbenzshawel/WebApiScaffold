@@ -3,16 +3,21 @@ ASP.NET Core dotnet new template for scaffolding Web API projects. Default imple
 
 Example:
 ```console
-dotnet new apiscaffold -N -E -A
+dotnet new apiscaffold -D -E -N
 ```
 
 ## Options
--N|--NLog : When set to true configures app to use NLog
+-D|--Docker                                    
 * bool - Optional          
 * Default: false / (*) true
 
 
 -E|--EntityFramework : When set to true configures app to use Entity Framework Core  
+* bool - Optional          
+* Default: false / (*) true
+
+
+-N|--NLog : When set to true configures app to use NLog
 * bool - Optional          
 * Default: false / (*) true
                   
