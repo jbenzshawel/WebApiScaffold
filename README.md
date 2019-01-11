@@ -1,5 +1,5 @@
 # Web API Scaffold
-ASP.NET Core dotnet new template for scaffolding Web API projects. Default implementation includes Bearer Token authentication. Optional parameters for configuring NLog, Entity Framework Core, and Solution file. 
+ASP.NET Core dotnet new template for scaffolding Web API projects. Default implementation includes Bearer Token authentication. Optional parameters for configuring Docker, Entity Framework Core, and NLog. 
 
 Example:
 ```console
@@ -31,8 +31,15 @@ After getting the project from git install the dotnet new template using the `--
 dotnet new --install ~/Projects/dotnet/Templates/WebApiScaffold/
 ```
 
+## Running in Docker
+To run the solution in docker use the following commands. 
 
-## App Settings Configuration (if not using Docker)
+```console
+docker build --pull -t aspnetapp .
+docker run --name example --rm -it -p 8000:80 aspnetapp
+```
+
+## App Settings Configuration 
 
 Settings for JWT TokenLifeInMinutes, TokenAudience, and TokenIssuer are set in appsettings.json. For development Token Secret and Connetion Strings are stored using [app secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2). 
 
@@ -40,12 +47,4 @@ Example:
 ```console
 dotnet user-secrets set "JwtSettings:TokenSecret" "YOUR SECRET STRING"
 dotnet user-secrets set "ConnectionStrings:AppDatabase" "YOUR CONNECTION STRING"
-```
-
-## Running in Docker
-To run the solution in docker use the following commands. 
-
-```console
-docker build --pull -t aspnetapp .
-docker run --name example --rm -it -p 8000:80 aspnetapp
 ```
